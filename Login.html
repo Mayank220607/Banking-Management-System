@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Banking Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://as2.ftcdn.net/v2/jpg/04/46/53/73/1000_F_446537301_iLwijM5SZPekEXWm798kssV8LSUfCToT.jpg');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            width: 350px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            height: 60px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <img src="logo2.jpg" alt="Bank Logo">
+        <h1>Login</h1>
+        <form id="loginForm" method="POST" onsubmit="handleLogin(event)">
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <input type="submit" value="Login">
+            <p>Don't have an account? <a href="register.html">Register</a></p>
+        </form>
+    </div>
+    <script>
+        function handleLogin(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get the values of the username and password fields
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Check if both fields are filled
+            if (username && password) {
+                // Redirect to the homepage (index.html)
+                window.location.href = "index.html";
+            } else {
+                // Alert if the form is incomplete
+                alert("Please fill in both the username and password.");
+            }
+        }
+    </script>
+</body>
+</html>
