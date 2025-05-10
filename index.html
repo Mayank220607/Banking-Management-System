@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo"><img src="logo2.jpg" alt="Bank Logo"></div>
+        <ul class="nav-links">
+            
+            <li><a href="accounts.html">Accounts</a></li>
+            <li><a href="loan.html">Loans</a></li>
+            <li><a href="invest.html">Investments</a></li>
+            <li><a href="setting.html">Settings</a></li>
+            <li><a href="Login.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Dashboard -->
+    <section id="dashboard" class="dashboard">
+        <h1>Welcome, User!</h1>
+        <div class="quick-actions">
+            <button onclick="openSection('transfer')">Money Transfer</button>
+            <button onclick="openSection('accounts')">View Accounts</button>
+            <button onclick="openSection('loans')">Loan Overview</button>
+            <button onclick="openSection('investments')">Investments</button>
+        </div>
+        <div class="account-summary">
+            <h2>Account Summary</h2>
+            <p>Balance: <strong>$5,000</strong></p>
+            <p>Last Transaction: <strong>- $200</strong> (Grocery Shopping)</p>
+        </div>
+    </section>
+
+    <!-- Money Transfer Section -->
+    <section id="transfer" class="section hidden">
+        <h2>Transfer Funds</h2>
+        <form id="transferForm">
+            <label for="from">From Account:</label>
+            <select id="from" name="from" required>
+                <option value="" disabled selected>Select an account</option>
+                <option>Checking</option>
+                <option>Savings</option>
+            </select>
+            <label for="to">To Account:</label>
+            <input type="text" id="to" placeholder="Recipient's account" required>
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" placeholder="$0.00" required min="0">
+            <button type="submit">Transfer</button>
+        </form>
+    </section>
+
+    <!-- Accounts Information Section -->
+    <section id="accounts" class="section hidden">
+        <h2>Account Information</h2>
+        <p>Checking Account: <strong>$3,000</strong></p>
+        <p>Savings Account: <strong>$2,000</strong></p>
+        <p>Account Type: <strong>Individual</strong></p>
+    </section>
+
+    <!-- Loans Information Section -->
+    <section id="loans" class="section hidden">
+        <h2>Loan Information</h2>
+        <p>Loan Type: <strong>Personal Loan</strong></p>
+        <p>Loan Amount: <strong>$10,000</strong></p>
+        <p>Outstanding Balance: <strong>$5,000</strong></p>
+        <p>Monthly Payment: <strong>$200</strong></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <h3>Stay Connected</h3>
+            <p>&copy; 2024 Bank360. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="accounts.html">Accounts</a>
+                <a href="loan.html">Loans</a>
+                <a href="invest.html">Investments</a>
+            </div>
+            <p>Contact Us: support@bank360.com | Phone: (123) 456-7890</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.j"></script>
+    <script>
+        function openSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.add('hidden'));
+            
+            // Show the selected section
+            const activeSection = document.getElementById(sectionId);
+            if (activeSection) {
+                activeSection.classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
